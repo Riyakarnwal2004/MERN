@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BLog</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .container{
+            margin: 40px;
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap:  20px;
+            }
+        .cardcontainer{
+            height: 100%;
+            width: 70%;
+            display: grid;
+            grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+            grid-template-rows: repeat(auto-fit,minmax(400px,1fr));
+            place-items: center ;
+            gap: 20px;
+        }
+        .imgbox:hover,.card:hover{
+            transform: scale(1.1);
+        }
+        .card{
+            display: flex;
+            flex-direction: column;
+            border: 1px solid black;
+            border-radius: 10px;
+            height:400px;
+            width: 250px;
+            }
+            .subbox{
+                padding: 10px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                gap: 20px;
+            }
+            .imgbox{
+                border: 10px;
+                height: 40%;
+            }
+        .imgbox img{
+            width:100%;
+            height: 100%;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+        }
+        .contentbox{
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .contentbox h3{
+            font-size: 30px;
+        }
+        .img{
+            height: 100%;
+        }
+        .img img {
+            height: 40px;
+            width: 40px;
+        }
+        .footerbox{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 40px;
+            padding: 10px;
+           }
+        .leftfooter{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .namebox{
+            font-size: 14px;
+        }
+        .rightfooter button{
+            background-color: white;
+            padding:10px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Riya's Blog</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim error, reprehenderit distinctio saepe eum optio?</p>
+        <div class="cardcontainer">
+            <div class="card">
+                <div class="imgbox">
+                    <img src="icon.jpg" alt="">
+                </div>
+                <div class="subbox">
+                <div class="contentbox">
+                    <h3>Lorem, ipsum dolor.</h3>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ducimus, eligendi?</p>
+                </div>
+                <div class="footerbox">
+                    <div class="leftfooter">
+                    <div class="img">
+                        <img src="music.png" alt="">
+                    </div>
+                    <div class="namebox">
+                        <p>name</p>
+                        <p>date</p>
+                    </div>
+                </div>
+                <div class="rightfooter">
+                    <button>Technology</button>
+                </div>
+                </div>
+            </div>
+            </div>
+            <div class="card">
+                <div class="imgbox">
+                    <img src="icon.jpg" alt="">
+                </div>
+                <div class="subbox">
+                <div class="contentbox">
+                    <h3>Lorem, ipsum dolor.</h3>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ducimus, eligendi?</p>
+                </div>
+                <div class="footerbox">
+                    <div class="leftfooter">
+                    <div class="img">
+                        <img src="music.png" alt="">
+                    </div>
+                    <div class="namebox">
+                        <p>name</p>
+                        <p>date</p>
+                    </div>
+                </div>
+                <div class="rightfooter">
+                    <button>Technology</button>
+                </div>
+                </div>
+            </div>
+            </div>
+            <div class="card">
+                <div class="imgbox">
+                    <img src="icon.jpg" alt="">
+                </div>
+                <div class="subbox">
+                <div class="contentbox">
+                    <h3>Lorem, ipsum dolor.</h3>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ducimus, eligendi?</p>
+                </div>
+                <div class="footerbox">
+                    <div class="leftfooter">
+                    <div class="img">
+                        <img src="music.png" alt="">
+                    </div>
+                    <div class="namebox">
+                        <p>name</p>
+                        <p>date</p>
+                    </div>
+                </div>
+                <div class="rightfooter">
+                    <button>Technology</button>
+                </div>
+                </div>
+            </div>
+            </div>
+            <div class="card">
+                <div class="imgbox">
+                    <img src="icon.jpg" alt="">
+                </div>
+                <div class="subbox">
+                <div class="contentbox">
+                    <h3>Lorem, ipsum dolor.</h3>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ducimus, eligendi?</p>
+                </div>
+                <div class="footerbox">
+                    <div class="leftfooter">
+                    <div class="img">
+                        <img src="music.png" alt="">
+                    </div>
+                    <div class="namebox">
+                        <p>name</p>
+                        <p>date</p>
+                    </div>
+                </div>
+                <div class="rightfooter">
+                    <button>Technology</button>
+                </div>
+                </div>
+            </div>
+            </div>
+            <div class="card">
+                <div class="imgbox">
+                    <img src="icon.jpg" alt="">
+                </div>
+                <div class="subbox">
+                <div class="contentbox">
+                    <h3>Lorem, ipsum dolor.</h3>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ducimus, eligendi?</p>
+                </div>
+                <div class="footerbox">
+                    <div class="leftfooter">
+                    <div class="img">
+                        <img src="music.png" alt="">
+                    </div>
+                    <div class="namebox">
+                        <p>name</p>
+                        <p>date</p>
+                    </div>
+                </div>
+                <div class="rightfooter">
+                    <button>Technology</button>
+                </div>
+                </div>
+            </div>
+            </div>
+            <div class="card">
+                <div class="imgbox">
+                    <img src="icon.jpg" alt="">
+                </div>
+                <div class="subbox">
+                <div class="contentbox">
+                    <h3>Lorem, ipsum dolor.</h3>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ducimus, eligendi?</p>
+                </div>
+                <div class="footerbox">
+                    <div class="leftfooter">
+                    <div class="img">
+                        <img src="music.png" alt="">
+                    </div>
+                    <div class="namebox">
+                        <p>name</p>
+                        <p>date</p>
+                    </div>
+                </div>
+                <div class="rightfooter">
+                    <button>Technology</button>
+                </div>
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

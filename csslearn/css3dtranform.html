@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS3D transform</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            width: 100%;
+            height: 100%;
+        }
+        .container{
+            height: 100%;
+            width: 100%;
+            margin: 10px;
+            padding: 100px;
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            background-color: beige;
+            gap:20px;
+        }
+        .item{
+            height: 200px;
+            width: 200px;
+            background-color: greenyellow;
+            text-align: center;
+            
+        }
+        #rotatex:hover{
+            transform: rotateX(45deg);
+        }
+        #rotatey:hover{
+            transform: rotateY(45deg);
+        }
+        #rotatez:hover{
+            transform: rotateZ(45deg);
+        }
+        #translatex:hover{
+            transform:translateX(100px);
+        }
+        #translatey:hover{
+            transform:translateY(100px);
+        }
+        #translatez:hover{
+            transform: perspective(300px) translateZ(100px);
+        }
+        #scalex:hover{
+            transform: scaleX(1.5);
+        }
+        #scaley:hover{
+            transform: scaleY(1.5);
+        }
+        #scalez:hover{
+            transform: perspective(300px) scalez(1.5) rotateX(45deg);
+        }
+        #skewx:hover{
+            transform: skewX(45deg);
+        }
+        #skewy:hover{
+            transform: skewY(45deg);
+        }
+        #rotate3d:hover{
+            transform: rotate3d(1, 2, 1, 45deg);
+        }
+        #translate3d:hover{
+            transform: translate3d(100px,100px,300px);
+        }
+        #scale3d:hover{
+            transform: scale3d(1.1,1.2,1.3) perspective(300px);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="item" id="rotatex">rotatex</div>
+        <div class="item" id="rotatey">rotatey</div>
+        <div class="item" id="rotatez">rotatez</div>
+        <div class="item" id="translatex">translatex</div>
+        <div class="item" id="translatey">translatey</div>
+        <div class="item" id="translatez">translatez</div>
+        <div class="item"id="scalex">scalex</div>
+        <div class="item" id="scaley">scaley</div>
+        <div class="item" id="scalez">scalez</div>
+        <div class="item" id="skewx">skewx</div>
+        <div class="item" id="skewy"> skewy</div>
+        <div class="item" id="rotate3d">rotate3d</div>
+        <div class="item" id="translate3d">translated3d</div>
+        <div class="item" id="scale3d">scale3d</div>
+        
+    </div>
+</body>
+</html>
