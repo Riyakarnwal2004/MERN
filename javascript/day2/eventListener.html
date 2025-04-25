@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Learning about event Listeners</h1>
+    <p id="fpara">this is a Para</p>
+    <a href="https://www.google.com/" id="anchor">Click here</a>
+
+    <div>
+        <p class="paras">first para
+            <span>span para</span>
+        </p>
+        <p class="paras">second para <span>span para</span> </p>
+        <p class="paras">third para <span>span para</span></p>
+        <p class="paras">fourth para <span>span para</span></p>
+    </div>
+    <script>
+         document.addEventListener('DOMContentLoaded', function() {
+      // Your code to manipulate the DOM here
+      const newElement = document.createElement('div');
+      newElement.textContent = 'Dynamically added content';
+      document.body.appendChild(newElement);
+    });
+        let para=document.querySelector("#fpara");
+        function changetext(){
+            console.log("eventtriggered");
+            para.textContent="changed by eventListen";
+        }
+        
+        para.addEventListener("click",changetext);
+        let anchorElement=document.querySelector("#anchor");
+        function changeanchorElement(event){
+            event.preventDefault();
+            anchorElement.textContent="click Done";
+        }
+        anchorElement.addEventListener("click",changeanchorElement);
+
+        let paras=document.querySelectorAll(".paras");
+        function alertpara(event){
+            if(event.target.nodeName=="SPAN"){
+            console.log(event.target.textContent);
+            alert("clicked on" + event.target.textContent);
+            }
+        }
+        // for(let i=0;i<paras.length;i++){
+        //     let para=paras[i];
+        //     para.addEventListener("click",alertpara);
+        // }
+
+
+        let mydiv=document.querySelector("div");
+        mydiv.addEventListener("click",alertpara);
+        document.addEventListener('DOMContentLoaded', function() {
+      // Your code to manipulate the DOM here
+      const newElement = document.createElement('div');
+      newElement.textContent = 'Dynamically added content';
+      document.body.appendChild(newElement);
+    });
+    </script>
+</body>
+</html>

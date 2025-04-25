@@ -6,6 +6,33 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <h1 id="head">Javascript Dom Manipulation</h1>
+    <p class="paragraph">this is a paragraph</p>
+    <script>
+document.getElementById("head");
+<h1 id=​"head">​Javascript Dom Manipulation​</h1>​
+document.getElementsByClassName("paragraph");
+
+document.querySelector("#head");
+<h1 id=​"head">​Javascript Dom Manipulation​</h1>​
+document.querySelector(".paragraph");
+<p class=​"paragraph">​this is a paragraph​</p>​
+
+let para=document.querySelector("#head");
+
+<h1 id=​"head">​Javascript Dom Manipulation​</h1>​
+para.inner
+undefined
+para.innerHTML="<h1>Hello jee</h1>";
+
+const element = document.getElementById('head');
+
+// Get the outerHTML of the element
+const htmlString = element.outerHTML;
+console.log(htmlString); // Output: <div id="myElement">This is my element</div>
+
+// Set the outerHTML of the element
+element.outerHTML = '<p>This is a new paragraph</p>';
+ </script>
 </body>
 </html>
