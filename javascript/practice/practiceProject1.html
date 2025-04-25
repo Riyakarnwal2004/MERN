@@ -1,17 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>To Do List</title>
     <style>
-
-        *{
+        * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        body{
+
+        body {
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -19,22 +20,26 @@
             width: 100vw;
             gap: 2rem;
         }
-        input{
+
+        input {
             width: 30vw;
             padding: 0.5rem;
         }
-        button{
+
+        button {
             padding: 0.5rem;
             background-color: black;
             color: white;
             border: none;
         }
-        .taskList li{
+
+        .taskList li {
             background-color: black;
             color: white;
         }
     </style>
 </head>
+
 <body>
     <h1>To Do List</h1>
     <div>
@@ -44,33 +49,51 @@
     <div id="taskDiv">
         <ol id="taskList"></ol>
     </div>
-    
-    <!-- javascript -->
-     <script>
-        let inputTask=document.getElementById("taskInput");
-        let addButton=document.getElementById("addButton");
 
-        function addTask(){
+    <!-- javascript -->
+    <script>
+        let inputTask = document.getElementById("taskInput");
+        let addButton = document.getElementById("addButton");
+        let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
+
+        function addTask() {
             let taskText = inputTask.value.trim();
-            if(inputTask!==""){
-                let taskitem=document.createElement("li");
-                taskitem.textContent=taskText;
-                let taskDiv=document.getElementById("taskList");
-                taskDiv.appendChild(taskitem);
-                inputTask.value="";
-                let deleteButton=document.createElement("button");
-                deleteButton.textContent="Delete";
-                deleteButton.style= "margin:0.5rem";
-                taskitem.appendChild(deleteButton);
-                function deleteTask(event){
-                    let buttonclicked=event.target;
-                    buttonclicked.parentElement.remove();
-                }
-                deleteButton.addEventListener("click",deleteTask);
+            if (taskText !== "") {
+                tasks.push(taskText);
+                localStorage.setItem("tasks", JSON.stringify(tasks));
+                addTaskToDOM(taskText);
+                inputTask.value = "";
             }
         }
-            addButton.addEventListener("click",addTask);
-    
-     </script>
+
+        function addTaskToDOM(taskText) {
+            let taskitem = document.createElement("li");
+            taskitem.textContent = taskText;
+
+            let deleteButton = document.createElement("button");
+            deleteButton.textContent = "Delete";
+            deleteButton.style = "margin:0.5rem";
+
+            deleteButton.addEventListener("click", function (event) {
+                let item = event.target.parentElement;
+                let text = item.firstChild.textContent;
+                tasks = tasks.filter(task => task !== text);
+                localStorage.setItem("tasks", JSON.stringify(tasks));
+                item.remove();
+            });
+
+            taskitem.appendChild(deleteButton);
+            document.getElementById("taskList").appendChild(taskitem);
+        }
+
+        addButton.addEventListener("click", addTask);
+
+        window.addEventListener("DOMContentLoaded", () => {
+            tasks.forEach(task => addTaskToDOM(task));
+        });
+
+
+    </script>
 </body>
+
 </html>
