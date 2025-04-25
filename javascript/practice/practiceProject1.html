@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do List</title>
+    <style>
+
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 100vh;
+            width: 100vw;
+            gap: 2rem;
+        }
+        input{
+            width: 30vw;
+            padding: 0.5rem;
+        }
+        button{
+            padding: 0.5rem;
+            background-color: black;
+            color: white;
+            border: none;
+        }
+        .taskList li{
+            background-color: black;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <h1>To Do List</h1>
+    <div>
+        <input type="text" name="task" id="taskInput">
+        <button id="addButton">ADD</button>
+    </div>
+    <div id="taskDiv">
+        <ol id="taskList"></ol>
+    </div>
+    
+    <!-- javascript -->
+     <script>
+        let inputTask=document.getElementById("taskInput");
+        let addButton=document.getElementById("addButton");
+
+        function addTask(){
+            let taskText = inputTask.value.trim();
+            if(inputTask!==""){
+                let taskitem=document.createElement("li");
+                taskitem.textContent=taskText;
+                let taskDiv=document.getElementById("taskList");
+                taskDiv.appendChild(taskitem);
+                inputTask.value="";
+                let deleteButton=document.createElement("button");
+                deleteButton.textContent="Delete";
+                deleteButton.style= "margin:0.5rem";
+                taskitem.appendChild(deleteButton);
+                function deleteTask(event){
+                    let buttonclicked=event.target;
+                    buttonclicked.parentElement.remove();
+                }
+                deleteButton.addEventListener("click",deleteTask);
+            }
+        }
+            addButton.addEventListener("click",addTask);
+    
+     </script>
+</body>
+</html>
