@@ -1,0 +1,13 @@
+#stopwatch{
+  background-color: black;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 2rem;
+}
+#stopwatch button{
+  width: 3rem;
+  margin:1rem;
+}
