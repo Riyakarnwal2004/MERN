@@ -6,7 +6,7 @@ import  pasteReducer from './features/pasteSlice';
 
 const store = configureStore({
   reducer: {
-    pastef: pasteReducer,
+    paste: pasteReducer,
   },
 });
 

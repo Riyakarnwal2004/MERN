@@ -14,10 +14,10 @@ const router =createBrowserRouter(
       <div>
         <NavBar/>
         <Home/>
-      </div>
+        </div>
     },
     {
-      path:"/pastes",
+      path:"/paste",
       element:
       <div>
         <NavBar/>
@@ -41,6 +41,7 @@ function App() {
   return (
     <>
       <RouterProvider router={router}/>
+      
 
     </>
   )
