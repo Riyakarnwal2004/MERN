@@ -42,23 +42,23 @@ const Home = () => {
      setSearchParams({});
   }
   return (
-    <>
-      <div className='flex flex-row gap-7 place-content-between'>
+    <div className='w-[100%] flex flex-col items-center'>
+      <div className='flex flex-row  place-content-between w-[32%]'>
         <input
-          className='p-1 rounded-md bg-black w-[66%] pl-4'
+          className='p-3 rounded-md bg-black  pl-4 mt-8'
           type="text" placeholder='Enter Title' value={title} onChange={(e) => setTitle(e.target.value)} />
-        <button onClick={createPaste} className='w-[15rem]'>{
+        <button onClick={createPaste} className='w-[15rem] p-1 mt-8'>{
           pasteId ? "Update My Paste" : "Create My Paste"}
         </button>
       </div>
       <div className='mt-8'>
-        <textarea className='rounded-2xl mt-4 min-w-[500px] h-[600px] p-4 bg-black'
+        <textarea className='rounded-2xl mt-7 min-w-[500px] h-[600px] p-4 bg-black'
           value={value}
           placeholder='enter content here'
           onChange={(e) => setValue(e.target.value)}
         />
       </div>
-    </>
+    </div>
   )
 }
 
